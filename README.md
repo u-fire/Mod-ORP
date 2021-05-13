@@ -19,8 +19,8 @@ Add the ability to measure ORP to your hardware application with a fully digital
 
 ### Use
 
-*   [Arduino Library Documentation](https://ufire.dev/files/mod-orp_arduino_library.pdf)
-*   [Raspberry Pi Python Documentation](https://ufire.dev/files/mod-orp_raspberrypi_library.pdf)
+*   [I²C Arduino Library Documentation](https://ufire.dev/files/mod-orp_arduino_library.pdf)
+*   [I²C Raspberry Pi Python Documentation](https://ufire.dev/files/mod-orp_raspberrypi_library.pdf)
 
 * * *
 
