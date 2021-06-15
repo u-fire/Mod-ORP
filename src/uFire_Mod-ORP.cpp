@@ -24,6 +24,7 @@ namespace uFire
     // Performs a single-point calibration.
     float i2c::calibrateSingle(float solution_mV, bool blocking)
     {
+      reset();
       _write_4_bytes(MV_REGISTER, solution_mV);
       _send_command(CALIBRATE_SINGLE_TASK);
       if (blocking)
