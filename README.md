@@ -50,4 +50,4 @@ Some resources to get started:
 ### Buy One
 [Mod-ORP](https://ufire.co) - just the sensor
 
-[Isolated Qwiic Dev Board](https://ufire.co) - all the components needed to use the module
+[Isolated Dev Board](https://ufire.co/buy/) - all the components needed to use the module

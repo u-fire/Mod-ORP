@@ -1,5 +1,5 @@
 {
-  "name": "Microfire Mod-ORP",
+  "name": "Microfire_Mod-ORP",
   "keywords": "orp, hydroponics, mv",
   "description": "Add the ability to measure ORP to your hardware application with a fully digital interface.",
   "repository": {
@@ -14,7 +14,7 @@
       "maintainer": true
     }
   ],
-  "version": "0.9.0",
+  "version": "1.0.0",
   "frameworks": "arduino",
   "platforms": "*"
 }
