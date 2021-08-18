@@ -1,7 +1,7 @@
 Mod-ORP
 =======
 
-> [Datasheet](https://ufire.dev/files/mod-orp_datasheet.pdf) 📜
+> [Datasheet](https://docs.google.com/document/d/1nhQdt0k4pQb8jUJF8Eyrj9TyxYFNImvvaVTNkO53OXs/export?format=pdf) 📜
 
 Add the ability to measure ORP to your hardware application with a fully digital interface.
 
@@ -19,8 +19,8 @@ Add the ability to measure ORP to your hardware application with a fully digital
 
 ### Use
 
-*   [I²C Arduino Library Documentation](https://ufire.dev/files/mod-orp_arduino_library.pdf)
-*   [I²C Raspberry Pi Python Documentation](https://ufire.dev/files/mod-orp_raspberrypi_library.pdf)
+*   [I²C Arduino Library Documentation](https://docs.google.com/document/d/13sLx5fBFMYVtQZ6cg3jBWCgiaeiubcsgKoJJmuxM8O8/export?format=pdf)
+*   [I²C Raspberry Pi Python Documentation](https://docs.google.com/document/d/1JjTey6BQPm-2TxjqOIvsrB8zkZyR7c_umFtVTHxnRkQ/export?format=pdf)
 
 * * *
 
@@ -34,8 +34,8 @@ Adding a module to your own design is straightforward. You'll need:
 
 Some resources to get started:
 
-*   [Schematic of the Isolated Qwiic Dev Board](https://ufire.dev/files/isolated_qwiic_dev_board_schematic.pdf)
-*   Design Incorporation section of the [Datasheet](https://ufire.dev/files/mod-orp_datasheet.pdf)
+*   [Schematic of the Isolated Dev Board](https://ufire.co/files/isolated_qwiic_dev_board_schematic.pdf)
+*   Design Incorporation section of the [Datasheet](https://docs.google.com/document/d/1nhQdt0k4pQb8jUJF8Eyrj9TyxYFNImvvaVTNkO53OXs/export?format=pdf)
 
 > [Request a custom board](https://docs.google.com/forms/d/e/1FAIpQLSfiCyjnq35GVyaRjVw6HphhNFNmoyi723qlqVLjUhc-TrmvfQ/viewform)
 
@@ -48,6 +48,6 @@ Some resources to get started:
 
 * * *
 ### Buy One
-[Mod-ORP](https://ufire.co) - just the sensor
+[Mod-ORP](https://ufire.co/buy/)
 
 [Isolated Dev Board](https://ufire.co/buy/) - all the components needed to use the module
