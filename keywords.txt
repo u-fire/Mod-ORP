@@ -15,7 +15,6 @@ connected	KEYWORD2
 calibrateSingle	KEYWORD2
 getDeviceInfo	KEYWORD2
 measureORP	KEYWORD2
-measureTemp	KEYWORD2
 reset	KEYWORD2
 setDeviceInfo	KEYWORD2
 setI2CAddress	KEYWORD2

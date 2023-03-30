@@ -1,14 +1,14 @@
-#include "uFire_Mod-ORP.h"
+#include "Microfire_Mod-ORP.h"
 
-float uFire::Mod_ORP::i2c::_tempC = -1;
-float uFire::Mod_ORP::i2c::_tempF = -1;
-float uFire::Mod_ORP::i2c::_mV = -1;
-float uFire::Mod_ORP::i2c::_calibrationSingleOffset = -1;
-int uFire::Mod_ORP::i2c::_hwVersion = -1;
-int uFire::Mod_ORP::i2c::_fwVersion = -1;
-int uFire::Mod_ORP::i2c::_status = -1;
+float Microfire::Mod_ORP::i2c::_tempC = -1;
+float Microfire::Mod_ORP::i2c::_tempF = -1;
+float Microfire::Mod_ORP::i2c::_mV = -1;
+float Microfire::Mod_ORP::i2c::_calibrationSingleOffset = -1;
+int Microfire::Mod_ORP::i2c::_hwVersion = -1;
+int Microfire::Mod_ORP::i2c::_fwVersion = -1;
+int Microfire::Mod_ORP::i2c::_status = -1;
 
-namespace uFire
+namespace Microfire
 {
   namespace Mod_ORP
   {
@@ -122,7 +122,8 @@ namespace uFire
       _tempC = _read_4_bytes(TEMP_C_REGISTER);
       if (_tempC == -127.0)
       {
-        _tempF = -127;
+        _tempF = 0;
+        _tempC = 0;
       }
       else
       {

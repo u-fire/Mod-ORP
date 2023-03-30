@@ -1,37 +1,39 @@
 /*
+   microfire.co for links to documentation, examples, and libraries
+   github.com/u-fire for feature requests, bug reports, and  questions
+   questions@ufire.co to get in touch with someone
+
+   Mod-ORP hardware version 2, firmware 1
+
    This allows you to run various functions in a command-line like interface.
    Enter:
    `config` to see the configuration of the device.
    'reset' to reset all the configuration stored in the device
-   
    Measure ORP:
      `orp`
-
    Single Point Calibration:
-    sin <calibration solution in pH> <solution temp [25]>
-      `sin 60.0 t` - Calibrate at 600.0 mV
-
+    sin <calibration solution in mV>
+      `sin 600` - Calibrate at 600.0 mV
    Measure Temperature:
     temp
-
    Change the I2C address:
     i2c 0x0F
 */
 
 #include <Arduino.h>
 #include <Wire.h>
-#include "uFire_Mod-ORP.h"
+#include "Microfire_Mod-ORP.h"
 
-uFire::Mod_ORP::i2c orp;
+Microfire::Mod_ORP::i2c orp;
 
 String buffer, cmd, p1, p2;
 const int fw_compatible = 1;
-const int hw_compatible = 1;
+const int hw_compatible = 2;
 
 void config()
 {
   orp.getDeviceInfo();
-  Serial.println((String) "uFire Mod-ORP Sensor: " + (orp.connected() ? "connected" : "*disconnected*"));
+  Serial.println((String) "Microfire Mod-ORP Sensor: " + (orp.connected() ? "connected" : "*disconnected*"));
   if (!orp.connected()) return;
   if ((orp.fwVersion != fw_compatible) || (orp.hwVersion != hw_compatible))
   {
@@ -50,23 +52,6 @@ void config_reset()
 {
   orp.reset();
   config();
-}
-
-void temperature()
-{
-  orp.measureTemp();
-  switch (orp.status)
-  {
-    case orp.STATUS_SYSTEM_ERROR:
-      Serial.println("Error: no temperature sensor connected");
-      break;
-    case orp.STATUS_NO_ERROR:
-      Serial.print("C|F: ");
-      Serial.print(orp.tempC);
-      Serial.print(" | ");
-      Serial.println(orp.tempF);
-      break;
-  }
 }
 
 void i2c()
@@ -104,7 +89,7 @@ void measure_orp()
         Serial.println("Error: Module not functioning properly");
         break;
       case orp.STATUS_NO_ERROR:
-        Serial.print(orp.mV, 3);
+        Serial.print(orp.mV);
         Serial.println((String)" mV");
         break;
     }
@@ -128,20 +113,18 @@ void single()
 
 void help()
 {
-  Serial.println(F("List of available commands, parameters separated by spaces, `low 4.0 22.1`, bracketed numbers are defaults if none provided"));
+  Serial.println(F("List of available commands, parameters separated by spaces"));
   Serial.println(F("config -or- c : no parameters : Displays all configuration and system information."));
   Serial.println(F("orp           : no parameters : Starts an ORP measurement."));
   Serial.println(F("i2c           : I2C_address : Changes the module's I2C address."));
   Serial.println(F("reset -or- r  : no parameters : Returns all configuration information to default values."));
   Serial.println(F("sin           : calibration_mV : Single-point calibration."));
-  Serial.println(F("temp -or- t   : no parameters : Starts a temperature measurement"));
 }
 
 void cmd_run()
 {
   if ((cmd == "conf") || (cmd == "config") || (cmd == "c")) config();
   if ((cmd == "reset") || (cmd == "r")) config_reset();
-  if ((cmd == "temp") || (cmd == "t")) temperature();
   if (cmd == "sin") single();
   if (cmd == "i2c") i2c();
   if (cmd == "orp") measure_orp();

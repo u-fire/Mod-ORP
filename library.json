@@ -10,11 +10,11 @@
     {
       "name": "Microfire LLC",
       "email": "contact@ufire.co",
-      "url": "https://ufire.co",
+      "url": "https://microfire.co",
       "maintainer": true
     }
   ],
-  "version": "1.0.0",
+  "version": "2.0.0",
   "frameworks": "arduino",
   "platforms": "*"
 }

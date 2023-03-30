@@ -22,7 +22,7 @@
 #define TEMP_C_REGISTER 8                   /*!< temperature in C register */
 #define CALIBRATE_SINGLE_OFFSET_REGISTER 12 /*!< single-point calibration register */
 
-namespace uFire
+namespace Microfire
 {
   namespace Mod_ORP
   {
@@ -73,5 +73,5 @@ namespace uFire
       uint8_t _read_byte(uint8_t reg);
     };
   } // namespace Mod_ORP
-} // namespace uFire
+} // namespace Microfire
 #endif // ifndef Mod_ORP_H
